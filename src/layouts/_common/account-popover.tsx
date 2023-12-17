@@ -47,13 +47,7 @@ export default function AccountPopover() {
   const popover = usePopover();
 
   const handleLogout = async () => {
-    try {
-      await logout();
-      popover.onClose();
-      router.replace('/');
-    } catch (error) {
-      console.error(error);
-    }
+      router.replace('/auth/jwt/login');
   };
 
   const handleClickItem = (path: string) => {
